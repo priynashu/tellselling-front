@@ -1,0 +1,252 @@
+import React, { Component } from 'react'
+import { Row, Col, Card, ListGroup } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Checkbox } from '@mui/material';
+import { getLocalUser } from '../../../utils/GetLocalUser';
+import axios from 'axios';
+import Button from '@mui/material/Button';
+import { BiAddToQueue } from "react-icons/bi";
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Typography from '@mui/material/Typography';
+import { FiTarget } from "react-icons/fi";
+import { toast } from 'react-toastify';
+
+export class ContentList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            resources: [],
+            filters: [],
+            contents: this.props.contents,
+            selectedResources: [],
+            sections: this.props.sections,
+            section_select_modal: false,
+            filters: this.props.Filters,
+        }
+    }
+    /***
+     * @name fetchResources
+     * @description Fetch all resource data from backend
+     */
+    fetchResources = async () => {
+        const user = getLocalUser();
+        const req = {
+            tenantId: user.tenantId
+        }
+        await axios.post('http://localhost:5000/resources/salesroom_content', req).then((res) => {
+            this.setState({ resources: res.data })
+        }).catch((err) => {
+            console.log(err);
+        });
+    };
+    componentDidMount() {
+        this.fetchResources();
+    }
+    render() {
+        //console.log(this.state.filters);
+        //Filtering Resources
+        console.log(this.state.resources);
+        const filtered = [];
+        const category_wise_contents = [];
+        const tag_wise_contents = [];
+        this.state.resources.map((val, key) => {
+            //make sure no resource duplicay
+            if (!filtered.includes(val)) {
+                //match filters
+                const categories = []
+                val.categories.filter((item) => {
+                    categories.push(item.value);
+                })
+
+                const tags = []
+                val.tags.filter((item) => {
+                    tags.push(item.value);
+                })
+
+                if (this.state.filters.tags.length != 0) {
+                    tags.some(element => {
+                        if (this.state.filters.tags.includes(element)) {
+                            tag_wise_contents.push(val);
+                        }
+                    });
+                    console.log('tag added');
+                }
+
+                if (this.state.filters.categories.length != 0) {
+                    categories.some(element => {
+                        if (this.state.filters.categories.includes(element)) {
+                            category_wise_contents.push(val);
+                        }
+                    });
+                }
+
+
+                
+            }
+            //console.log(category_wise_contents);
+            //if both filters are applied
+            if(this.state.filters.tags.length!=0 && this.state.filters.categories.length!=0){
+                const filtered_temp = category_wise_contents.filter(value => tag_wise_contents.includes(value));
+                filtered_temp.forEach((val,key)=>{
+                    if(!filtered.includes(val)){
+                        filtered.push(val);
+                    }
+                })
+            }else{
+                //if any of the two filter is empty
+                //if category filter is empty push all tag contents
+                if(this.state.filters.categories.length==0){
+                    tag_wise_contents.forEach((val,key)=>{
+                        if(!filtered.includes(val)){
+                            filtered.push(val);
+                        }
+                    })
+                }
+                //if tag filter is empty push all category contents
+                if(this.state.filters.tags.length==0){
+                    category_wise_contents.forEach((val,key)=>{
+                        if(!filtered.includes(val)){
+                            filtered.push(val);
+                        }
+                    })
+                }
+            }
+            
+        })
+
+
+        /**
+         * @name selectResources
+         */
+        const SelectResource = (resource) => {
+            const selected_resources = this.state.selectedResources;
+            if (selected_resources.includes(resource)) {
+                selected_resources.splice(selected_resources.indexOf(resource), 1)
+            } else {
+                selected_resources.push(resource);
+            }
+            this.setState({ selected_resources: selected_resources });
+        }
+        /**
+         * @name ContentInsert
+         */
+        const ContentInsert = (section) => {
+            const temp = this.state.contents;
+            //search for selected section
+            temp.forEach((data, key) => {
+                if (data.section_name == section) {
+                    this.state.selectedResources.forEach((val, k) => {
+                        data.contents.push(val);
+                    })
+                }
+            })
+            this.setState({ selectedResources: [] })
+            this.props.UpdateContents(temp);
+            toast.success('Content added to ' + section, {
+                position: toast.POSITION.BOTTOM_LEFT,
+            });
+        }
+        /***
+         * @name AddToSection
+         */
+        const AddToSection = () => {
+            const style = {
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: 400,
+                bgcolor: 'background.paper',
+                border: 'none',
+                boxShadow: 24,
+                p: 2,
+            };
+            const handleOpen = () => this.setState({ section_select_modal: true });
+            const handleClose = () => this.setState({ section_select_modal: false });
+            return (
+                <>
+                    <Button onClick={handleOpen} style={{ float: 'right' }}><BiAddToQueue style={{ marginRight: 5 }} /> Add to Section</Button>
+                    <Modal
+                        open={this.state.section_select_modal}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        style={{ border: 'none' }}
+                        aria-describedby="modal-modal-description">
+                        <Box sx={style} style={{ border: 'none' }}>
+                            <Typography id="modal-modal-title" variant="h6" component="h2">
+                                Add to section
+                            </Typography>
+                            <div id="modal-modal-description" sx={{ mt: 2 }}>
+                                <ListGroup style={{ marginTop: 5 }}>
+                                    {
+                                        (this.props.sections.length == 0) ? <small>No section</small> :
+                                            this.props.sections.map((section, j) => {
+                                                return (
+                                                    <ListGroup.Item action onClick={() => { ContentInsert(section); handleClose(); }}>
+                                                        <FiTarget style={{ marginRight: 8 }} />{section}
+                                                    </ListGroup.Item>
+                                                );
+                                            })
+                                    }
+                                </ListGroup>
+                            </div>
+                        </Box>
+                    </Modal>
+                </>
+            );
+        }
+        return (
+            <>
+                <div style={{ width: '100%', marginBottom: 20 }}>
+                    <b>Filter Results</b>
+                    <AddToSection />
+                </div>
+                <Row style={{ marginTop: 10, marginBottom: 10, width: '100%' }}>
+                    {filtered.filter((data)=>{
+                        if(this.props.Filters.search_keyword.length>1){
+                            if(data.resourceTitle.toLowerCase().match(this.props.Filters.search_keyword.toLowerCase())){
+                                return data;
+                            }
+                            
+                        }else{
+                            return data;
+                        }
+                    }).map((data, key) => {
+                        const create_date = new Date(data.createdAt);
+                        const update_date = new Date(data.updatedAt);
+                        return (
+                            <Col sm={4}>
+                                <Card onClick={() => { SelectResource(data) }} style={{ marginBottom: 10, cursor: 'pointer' }}>
+                                    <Card.Body style={{ padding: 5, height: '100px', width: '100%', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: `url(${data.thumbnail})`, cursor: 'pointer' }} variant="top" >
+                                        <Checkbox style={{ backgroundColor: '#eee', padding: 5 }} onClick={() => { SelectResource(data) }} checked={(this.state.selectedResources.includes(data)) ? true : false} />
+                                    </Card.Body>
+                                    <Card.Body style={{ padding: '0.5rem 0.5rem' }}>
+                                        <b style={{ fontSize: 12, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', lineClamp: 2, boxOrient: 'vertical' }}>
+                                            {data.resourceTitle}
+                                        </b>
+                                        <div>
+                                            <small style={{ fontSize: 10 }}>Created at {create_date.getDay() + "-" + (create_date.getMonth() + 1) + "-" + create_date.getFullYear()}</small>
+                                            <div>
+                                                {
+                                                    data.tags.map((val, i) => {
+                                                        return (<span style={{ backgroundColor: '#eee', margin: 5, padding: '2px 8px', borderRadius: '30%', fontSize: 8 }}>{val.label}</span>)
+                                                    })
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        )
+                    })}
+                </Row>
+            </>
+        )
+    }
+}
+
+export default ContentList
+
+

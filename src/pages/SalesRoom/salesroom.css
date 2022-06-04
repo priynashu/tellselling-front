@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.createBtn {
+    background-color: #7367f0 !important;
+    color:#fff !important;
+    font-weight: 500 !important;
+    padding: 9px 18px !important;
+    font-size: 0.8rem !important;
+    border-radius: 0.358rem!important;
+    font-family: "Montserrat", Helvetica, Arial, serif !important;
+  }
+  .createBtn:hover{
+      background-color: #6154f0 !important;
+      box-shadow: -5px 5px 15px -5px #6154f0 !important;   
+  }
+  .featured{
+      background: none;
+      border: solid 1px #7367f0;
+      border-radius: 5px;      
+      
+  }
+  .featured:hover{
+      
+      background-color: #e4e2f7;
+  }
+  .featured button{
+    color: #7367f0;
+    font-size: 0.9rem;
+    padding: 7px 16px;
+    font-family: "Montserrat", Helvetica, Arial, serif ;
+    font-weight: 500;
+  }
+  .featured button:hover{
+    color: #7367f0;
+  }
+  .list{
+      border: solid 1px #7367f0 !important;
+      border-top-right-radius: 0!important;
+      border-bottom-right-radius: 0!important;  
+      padding: 4px 8px;
+      
+  }
+  .grid{
+    border: solid 1px #7367f0 !important;
+    border-left: none!important;
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+    padding: 4px 8px;
+  }
+  .list:hover,.grid:hover{
+      border: solid 1px #7367f0;
+      background-color: #e4e2f7;
+  }
+  .list svg,.grid svg{
+      color: #7367f0;
+      font-size: 18px;
+  }  
+  .input-group-text{
+      background-color: #fff!important;
+  }
+  .search-bar{
+    border-right: 0 !important;
+  }
+  .search-bar::placeholder{
+      font-size: 13px;      
+      color: lightgray!important;
+      font-weight: 400;
+   }
+   

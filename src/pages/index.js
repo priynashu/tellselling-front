@@ -1,0 +1,19 @@
+export { SignInPage } from './SignInPage';
+export { SignUpPage } from './SignUpPage';
+export { ForgotPassword } from './ForgotPassword';
+export { ResetPassword } from './ResetPassword';
+export { HomePage } from './Home';
+export { SalesRoom } from './SalesRoom';
+export { SelectRoomType } from './SalesRoom/SelectType';
+export { CreateRoom1 } from './SalesRoom/CreateRoom1';
+export { CreateRoom2 } from './SalesRoom/CreateRoom2';
+export { CreateRoom3 } from './SalesRoom/CreateRoom3';
+export { ResourceCenter } from './ResourceCenter'
+export { LandingPages } from './LandingPages';
+export { Insights } from './Insights';
+export { Account } from './Account';
+export { Users } from './Users';
+export { CommissionRules } from './CommissionRules';
+export { Billing } from './Billing';
+export { Forms } from './Forms';
+export {Form} from './Forms/FormEditor';

@@ -1,0 +1,193 @@
+@import '../../ui/colors';
+
+@mixin md {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+.main {
+  min-height: 100vh;
+  background: #ebebeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100vw;
+
+  .wrapper {
+    min-height: 80vh;
+    display: flex;
+    background: #f7f7f7;
+
+    @include md {
+      flex-direction: column;
+    }
+
+    .left {
+      padding: 20px 30px;
+
+      @include md {
+        height: 40vh;
+      }
+
+      h2 {
+        width: fit-content;
+        font-size: 1.6em;
+        color: $button-primary-color;
+      }
+
+      .image_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        img {
+          width: 60%;
+
+          @include md {
+            width: 75%;
+          }
+
+          @include sm {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    .right {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px;
+      min-width: 470px;
+
+      @include md {
+        margin-top: 30px;
+        padding: 20px;
+        min-width: 0;
+      }
+
+      .welcome_text {
+        font-weight: 600;
+        font-size: 1.35em;
+        margin-bottom: 10px;
+      }
+
+      .welcome_des {
+        font-weight: 500;
+        font-size: 0.85em;
+        color: #58575f;
+        margin-bottom: 25px;
+        letter-spacing: -0.5px;
+      }
+
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        label,
+        .forgot_password {
+          font-weight: 600;
+          font-size: 0.9em;
+          color: #58575f;
+        }
+
+        .forgot_password {
+          cursor: pointer;
+          color: $button-primary-color;
+        }
+
+        .textfield {
+          margin-top: 10px;
+          border: 2px solid #918f9b;
+          outline: none;
+          padding: 6px 10px;
+          font-size: 1.1em;
+          color: #58575f;
+          border-radius: 4px;
+          width: 100%;
+        }
+
+        .password_div {
+          margin-top: 20px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .checkbox_div {
+          margin: 16px 0;
+          width: 100%;
+          display: flex;
+          align-items: center;
+
+          .checkbox {
+            height: 16px;
+            width: 16px;
+            margin-right: 8px;
+            cursor: pointer;
+          }
+
+          label {
+            cursor: pointer;
+          }
+        }
+
+        .submit_button {
+          width: 100%;
+          padding: 20px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 9px 0;
+          font-size: 1.1em;
+          font-weight: 500;
+          border-radius: 3px;
+          color: #fff;
+          letter-spacing: 0.5px;
+          background: $button-primary-color;
+        }
+      }
+
+      .create_account {
+        margin-top: 16px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        .new_text,
+        .link {
+          font-weight: 600;
+          font-size: 0.9em;
+          color: #58575f;
+          padding: 4px 0;
+        }
+
+        .link {
+          text-decoration: none;
+          cursor: pointer;
+          color: $button-primary-color;
+        }
+      }
+    }
+  }
+}

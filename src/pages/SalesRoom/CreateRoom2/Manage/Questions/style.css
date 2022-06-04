@@ -1,0 +1,55 @@
+/*.col-md-9{
+    width:75% !important;
+    float:left;
+}
+.col-md-3{
+    width:25% !important;
+    float:right;
+}
+.react-form-builder-toolbar{
+    margin-top: 20px;
+}
+.react-form-builder .react-form-builder-toolbar ul li {
+    font-size: 14px !important;
+    padding: 5px !important;
+    color:#9372f2;
+}
+.react-form-builder .react-form-builder-toolbar h4 {
+    display: none !important;
+}
+.react-form-builder .react-form-builder-toolbar {
+    margin-top: 0px !important;
+}
+.react-form-builder .react-form-builder-preview {
+    border: none !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+}
+.Sortable {
+    border: 1px solid #f1f1f1 !important;
+}
+.badge{
+    color:#000000;
+}*/
+.form-wrap.form-builder .frmb li {
+    position: relative;
+    padding: 10px !important;
+    clear: both;
+    margin-left: 0;
+    margin-bottom: 2px !important;
+    background-color: #fff;
+    transition: background-color 250ms ease-in-out, margin-top 400ms;
+}
+.btn-group{
+    display:none !important;
+}
+.form-wrap.form-builder .frmb-control {
+    margin: 0;
+    padding: 0;
+    border-radius: 0px !important;
+    color: #776cf7;
+}
+
+li{
+    margin-top: 0px;
+}

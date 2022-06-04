@@ -1,0 +1,70 @@
+.topbar {
+  position: sticky;
+  top: 10px;
+  background: #fff;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.096) 0px 1px 2px;
+
+  
+    .title {
+      font-size: 0.8em;
+      font-weight: 600;      
+      margin-left: 0.2rem;      
+      color: #6e6b7b;
+    }
+
+    .role {
+      float: right;
+      font-size: 0.7em;
+      color: #6e6b7b;
+      font-weight: 500;      
+      margin-bottom: 0;
+    }
+  
+
+  .image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    object-fit: cover;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.box{     
+  position: fixed;  
+  top: 16%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 65px;
+  background-color: white;
+  border: 4px solid white;  
+  padding: 20px;
+  transition: ease 2s;
+}
+.profile:hover{
+color:#8154f6;
+background-color: #ede7fe;
+}
+.logout:hover{
+  color:#8154f6;
+background-color: #ede7fe;
+cursor: pointer;
+}
+.logout:active,.profile:active{
+  color:#dbcefd;
+  background-color: #926cf9;
+}

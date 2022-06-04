@@ -1,0 +1,19 @@
+@import '../../ui/colors';
+
+.main {
+  height: 100vh;
+  display: flex;
+  background: #f4f5f8;
+
+  .content {
+    padding: 0 2rem;
+    flex-grow: 1;
+
+    .pages {
+      margin-top: 2rem;
+      padding: 15px 20px 15px 0;
+      height: calc(100vh - 100px);
+      overflow-y: scroll;
+    }
+  }
+}

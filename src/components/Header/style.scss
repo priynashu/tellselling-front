@@ -1,0 +1,74 @@
+@import '../../ui/colors';
+
+.wrapper {
+  h2 {
+    font-weight: 500;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 10px 0;
+    
+    .link,
+    .active {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      color: #5e5873;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 4px;
+      transition: 0.2s all;
+
+      span {
+        margin-left: 5px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .link:hover {
+      color: #fff;
+      background: #7367f0;
+    }
+
+    .active {
+      color: #fff;
+      background: #7367f0;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}
+.HeaderTitle{ 
+    font-size: 1.414rem;
+    font-weight: 500;
+    color: #636363;
+    padding-right: 1rem;
+    border-right: 1px solid #d6dce1;
+
+}
+.after_title{
+      font-weight: 400;
+      color: #7367f0;
+      text-decoration: none;
+      font-size: 0.8rem;
+      list-style: none;      
+      margin-bottom: 20px; 
+      cursor: pointer;  
+}
+.after_admin{
+      font-weight: 400;
+      color: #6e6b7b;;
+      text-decoration: none;
+      font-size: 0.8rem;
+      list-style: none;      
+      margin-bottom: 20px; 
+        
+}
+.span_link{
+  
+  line-height: 1rem;
+  font-size: 14px;
+}

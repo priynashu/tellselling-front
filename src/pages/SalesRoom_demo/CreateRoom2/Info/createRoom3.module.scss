@@ -1,0 +1,92 @@
+
+@mixin md {
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  }
+  .thumbnail-choose:hover{
+    cursor:pointer;
+    border:1px solid #ebe9f1;
+  }
+  .container{
+    padding: 0px 150px;
+    
+  }
+  .img_col{
+    padding:30px 20px;
+    background:#ffffff;    
+    border:1px solid #ebe9f1;
+  }
+  .event_form{
+    border:0;
+    border-bottom:solid #4c4a4a 1px;
+    border-radius:0;
+    font-size: 20px;    
+  }
+  .event_form::placeholder{
+      font-weight: bolder;
+      color: #4c4a4a;
+      opacity: 0.3;
+  }
+  .event_btn{
+    font-size:20px;
+    cursor:pointer;
+    color:#4c4a4a;
+    transform: translateY(10px);
+  }
+  .duration_btn{
+    color :#8c8c8c;
+    border:0;
+    background-color: #d9d9d9;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .duration_btn:hover{
+    color :#8c8c8c;
+    border:0;
+    background-color: #d9d9d9;
+  }
+  .key{
+    transform: rotate(-45deg);
+    
+    font-size: 20px;
+
+  }
+  .access_text{
+    font-size:20px;
+    color:rgb(51, 140, 102);
+    font-weight: bolder;
+    
+  }
+  .checkbox_require{
+    transform: translateY(-10px) translateX(-40px);
+    margin-left: 10px;
+    
+  }
+  .createEvent_icon{
+    transform: translateY(-2px);
+  }
+  .stream_text{
+      font-size: 15px;
+      font-weight: 700;
+  }
+  .stream_link{
+      font-size: 15px;
+      padding: 10px;
+  }
+  .stream_box{
+
+    border-radius: 3px;
+  }
+  .stream_identifier{
+      color:#b3b3b3;
+      font-weight: 500;
+  }
+  hr{
+      width: 100%;
+      margin: 0;
+  }
+  .row2{
+      background-color: #f2f2f2;
+      padding: 20px 15px;
+  }

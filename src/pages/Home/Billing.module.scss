@@ -1,0 +1,293 @@
+@import '../../ui/colors';
+
+.home_wrapper {
+  .page_title {
+    font-weight: 600;
+    color: #58575f;
+  }
+
+  .card_wrapper {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 25px;
+    align-items: stretch;
+  }
+}
+@import '../../ui/colors';
+
+@mixin md {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+$primary:purple;
+.account_wrapper {
+  margin-top: 20px;
+  // height: calc(100vh - 228px);
+  // overflow-y: scroll;
+  padding: 15px 0;
+
+  .profile_details,
+  .delete_account {
+    background: #fff;
+    border: 2px solid #e5e5e7;
+    border-radius: 5px;
+  }
+  .title {
+    padding: 15px 20px;
+  }
+  .upgrade_plan{
+    background: $button-primary-color;
+    color: #fff;
+    border: 1px solid $button-primary-color;
+  }
+  .upgrade_plan:hover{
+    background:#956ef7;
+  }
+}
+.cardNameBtn{
+    background-color: #dccffc;
+    border: solid 1px #dccffc;
+    color:#713df5;
+    padding: 2px 5px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 3px;
+}
+.cardNameBtn:hover{
+    color:#713df5;
+}
+.edit{
+    background:none;
+    color:#3e0ac2;
+    border:solid 2px #3e0ac2;
+    padding: 5px 25px;
+    margin: 0 10px;
+}
+.delete{
+    margin: 0 10px;
+    background:none;
+    color:#4d4d4d;
+    border:solid 2px #4d4d4d;
+    padding: 5px 25px;  
+}
+.cardExpiry{
+    margin: 10px 10px;
+    float: right;
+    font-size: 15px;
+    
+}
+.box{     
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 98%;
+  background-color: white;
+  border: 2px solid white;  
+  box-shadow: 24;
+  padding: 20px;
+}
+.customizedButton{
+  position: absolute;
+    left: 99.5%;
+    top:-1%;
+    background-color: white;
+    color: gray;
+
+}
+.card {
+  border:none;
+  padding: 10px 50px;
+}
+
+.card::after {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover {
+
+
+  transform: scale(1.02, 1.02);
+  -webkit-transform: scale(1.02, 1.02);
+  backface-visibility: hidden; 
+  will-change: transform;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.75) !important;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover .btn-outline-primary{
+  color:white;
+  background:#007bff;
+}
+ul{
+  list-style-type: circle;
+  
+  font-size: 17px;
+}
+// price in card
+.price{
+  text-align: center;
+}
+.currency,
+.value {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+.duration {
+	font-size: 1.3rem;
+}
+
+
+
+.duration::before {
+	content: '/';
+	margin-right: 2px;
+}
+
+.value {
+    font-size: 3rem;
+    font-weight: 300;
+    font-weight: bold;
+    color: #956ef7;
+    
+}
+
+
+.currency {
+  display: inline-block;
+  margin-top: 10px;
+  vertical-align: top;
+  font-size: 1.5rem;
+  
+ 
+}
+
+.duration {
+  font-size: 1.4rem;
+}
+
+li{
+font-size: 10px;
+margin-top: 10px;
+}
+.UpgradeCard{
+  margin:0 20px;  
+}
+.currentPlanBtn{
+  color:#00cc00;
+  background: white;
+  padding:5px 20px;
+  border: 1px solid #00cc00;
+}
+.currentPlanBtn:hover{
+  color:white;
+  background:#00cc00;
+  border: 1px solid #00cc00;
+}
+.UpgradeBtn{
+  padding:5px 70px;
+  background: white;
+  color: $button-primary-color;
+  border: 1px solid $button-primary-color; 
+}
+.UpgradeBtn:hover{  
+  background: $button-primary-color;
+  color: #fff;
+  border: 1px solid $button-primary-color; 
+}
+.container {
+  text-align: center;
+}
+.toggleswitch {
+  position: relative;
+  width: 75px;
+  display: inline-block;
+  text-align: left;
+  top: 8px;
+}
+.checkbox {
+  display: none;
+}
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+}
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.inner:before,
+.inner:after {
+  float: left;
+  width: 50%;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  color: #fff;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.inner:before {
+  content: "YES";
+  padding-left: 10px;
+  background-color: #060;
+  color: #fff;
+}
+.inner:after {
+  content: "NO";
+  padding-right: 10px;
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+.switch {
+  display: block;
+  width: 24px;
+  margin: 5px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.checkbox:checked + .label .inner {
+  margin-left: 0;
+}
+.checkbox:checked + .label .switch {
+  right: 0px;
+}
+.trialBtn{
+  background: $button-primary-color;
+  color: #fff;
+  border: 1px solid $button-primary-color; 
+}
+.trialBtn:hover{
+  background:#956ef7;
+  border: solid 1px #956ef7;
+}
+.usd_year{
+  font-size: 12px;
+  color:lightgray;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}

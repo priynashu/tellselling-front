@@ -1,0 +1,10 @@
+developing site - "https://app-dev.tellselling.tech/salesrooms/";
+
+backend :
+MONGODB_URL = mongodb+srv://admin:G8Gy0D9VFxThc7N7@cluster0.vq7yq.mongodb.net/tellselling?retryWrites=true&w=majority
+MONGODB_URL1 = mongodb+srv://amanjha8100:tellselling@cluster0.uw3pw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+JWT_SECRET = e2cb3f0b9423c1b3c020886a53859f74
+SENDGRID_API_KEY = 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
+CLOUDINARY_CLOUD_NAME = tellselling
+CLOUDINARY_API_KEY: "165973283857982"
+CLOUDINARY_API_SECRET: "5WR5zH2znRl5xDTEN8_tOcMA3O8"

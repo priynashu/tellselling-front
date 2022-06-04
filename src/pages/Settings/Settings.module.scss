@@ -1,0 +1,60 @@
+@import '../../ui/colors';
+
+@mixin md {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+.account_wrapper {
+  margin-top: 20px;
+  // height: calc(100vh - 228px);
+  // overflow-y: scroll;
+  padding: 15px 0;
+
+  .profile_details,
+  .delete_account {
+    background: #fff;
+    border: 2px solid #e5e5e7;
+    border-radius: 5px;
+  }
+  .title {
+    padding: 15px 20px;
+  }
+}
+.main_container{
+    margin:0 10px;
+    margin-top: 50px;
+    padding-right: 30px;
+}
+.company{
+    border: 2px solid #e5e5e7;
+    border-radius: 5px;
+    padding: 20px;
+    
+}
+.tracking_code{
+    border: 2px solid #e5e5e7;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 30px 0;
+}
+.required_field::after{
+    content: "*";
+    color: red;
+}
+.download{
+    border: 2px solid #e5e5e7;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.save_changes{
+    background: $button-primary-color;
+    color: #fff;
+    border: 1px solid $button-primary-color;
+}
+.save_changes:hover,.save_changes:active{
+    background:#956ef7;
+    border: 1px solid #956ef7;
+}

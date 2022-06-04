@@ -1,0 +1,201 @@
+html {
+    line-height: 1.5!important;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif!important;
+    font-weight: normal;
+    color: rgba(0,0,0,0.87);
+}
+.react-tagsinput {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-top: 2px;
+    font-size: 12px;
+}
+.react-tagsinput-tag {
+    background-color: #aba6ef;
+    border-radius: 2px;
+    border: 1px solid #665ce5;
+    color: #3930b5;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 4px;
+}
+.single_line{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body {
+    background-color: #f7f7f7;
+    
+    background-position: bottom left;
+    background-size: 30%;
+    background-repeat: no-repeat;
+}
+
+
+.cta-btn {
+    width: 100%;
+    background-color: #1c67f3;
+    box-shadow: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.cta-btn-outline {
+    width: 100%;
+    background-color: #1c67f300;
+    color: #1c67f3;
+    border: 1px solid #1c67f3;
+    box-shadow: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.cta-btn-outline:hover {
+    background-color: #1c67f300;
+    color: #1c67f3;
+}
+
+.cta-btn:hover {
+    background-color: #1c67f3;
+}
+hr {
+    border: none;
+    border-top: 0.5px solid #c1c0c0;
+}
+.social-link {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #929292
+}
+.social-link:hover {
+    color: #1c67f3
+}
+.social-share {
+    margin-bottom: 20px;
+}
+.share-head {
+    color: #5f5f5f;
+    font-weight: 300;
+}
+.collection-item {
+    background-color: #f7f7f7 !important;
+    color: #5f5f5f !important;
+    border: none !important;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.collection-item:hover {
+    background-color: #dde9ff !important;
+    color: #1c67f3 !important;
+}
+.collection-item.active {
+    background-color: #dde9ff !important;
+    color: #1c67f3 !important;
+}
+.content-nav-icon {
+    margin-right: 10px;
+    float: left;
+}
+.content {
+    border: none;
+    width: 100%;
+    height: 300px;
+}
+.single-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ /* .container {
+    width: 90% !important;
+} */
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}
+.header {
+    color: #555555;
+}
+/* #loader {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25%;
+    left: auto;
+    right: auto;
+}  */
+/* #content {
+    display: none;
+} */
+.collection-item:hover {
+    cursor: pointer;
+}
+.event{
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+.house-icon{
+    margin-right: 10px;
+}
+.event-card{
+    
+    border-radius: 20px!important;
+    border-bottom-left-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
+}
+.card-event-image{
+    border-radius: 20px!important;
+    border-bottom-left-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
+    display: block;
+    
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.card .card-content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+.card .card-image img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+}
+.event.clear,.contents.clear{
+    display: none;
+}

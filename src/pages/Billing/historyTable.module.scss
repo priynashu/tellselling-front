@@ -1,0 +1,35 @@
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    td,th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 4px 8px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+  
+    tr {
+      font-weight: 500;
+      font-size: 14px;
+      color: #5e5873;
+    }
+
+  
+    td:last-child {
+      padding-left: 15px;
+  
+      .actions {
+        width: fit-content;
+        padding: 0 2px;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .downloadBtn{
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    color:#7367f0 ;
+  }

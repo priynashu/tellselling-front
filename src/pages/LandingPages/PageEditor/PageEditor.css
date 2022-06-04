@@ -1,0 +1,32 @@
+.edit:hover{
+    cursor: pointer;
+    color : #7d72f7;
+}
+#editor{
+    height:80vh !important;
+    width: 100% !important;
+}
+.list-group-item:hover{
+    cursor: pointer;
+}
+.list-group-item-active{
+    background-color: rgb(240, 229, 229);
+}
+.gjs-pn-views-container {
+    height: 100%;
+    padding: 42px 0 0;
+    right: 0;
+    width: 18%;
+    overflow: auto;
+    box-shadow: 0 0 5px rgb(0 0 0 / 18%);
+}
+.gjs-pn-views {
+    border-bottom: 2px solid rgba(0,0,0,.2);
+    right: 0;
+    width: 18%;
+    z-index: 4;
+}
+.gjs-pn-options {
+    right: 18%;
+    top: 0;
+}

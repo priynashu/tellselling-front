@@ -1,0 +1,131 @@
+.main {
+  .title {
+    font-weight: 500;
+    color: #2e2e30;
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+
+  .wrapper {
+    display: flex;
+    gap: 20px;
+
+    .all_types {
+      width: 65%;
+      .full_card:hover{
+        cursor:pointer;
+        box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+        transition: all 0.3s ease-in-out, background 0s, color 0s, border-color 0s;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        .card_content{
+          .content_title{
+            color: #6e64f6;
+          }
+        }
+      }
+      .full_card {
+        margin: 10px 0;
+        transition: 0.3s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #ebe9f1;
+        border-radius: 3px;
+        overflow: hidden;
+        background: #fff;
+
+        .image_wrapper {
+          width: 22%;
+          padding: 10px;
+          height: 170px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        .card_content {
+          position: relative;
+          width: 60%;
+          padding: 15px 20px;
+          align-self: flex-start;
+          border-right: 1px solid #ebe9f1;
+
+          .content_title {
+            font-weight: 600;
+            font-size: 16px;
+            margin: 1px 0;
+            color: #535353;
+          }
+
+          .content_des {
+            margin: 5px 0;
+            font-weight: 300;
+            text-align: justify;
+            font-size: 14px;
+            color: #757474;
+          }
+
+          .features {
+            margin-top: 18px;
+            padding-left: 16px;
+
+            li {
+              margin: 10px 0;
+              font-weight: 300;
+              list-style-type: circle;
+              font-size: 14px;
+              color: #757474;
+            }
+          }
+        }
+
+        .edit_area {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0px 10px;
+          width: 20%;
+        }
+      }
+    }
+
+    .tips_wrapper {
+      background-color: #fff;
+      margin-top: 10px;
+      width: 35%;
+      height: fit-content;
+      padding: 15px 18px;
+      border: 1px solid #ebe9f1;
+      border-radius: 3px;
+
+      .headline {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        svg {
+          margin-bottom: 0;
+        }
+
+        h4 {
+          margin-left: 8px;
+        }
+      }
+
+      .each_tip {
+        font-size: 15px;
+        color: grey;
+        font-weight: 300;
+        margin-top: 18px;
+        padding-left: 15px;
+        border-left: 4px solid #4e4eff;
+        border-radius: 2px;
+      }
+    }
+  }
+}

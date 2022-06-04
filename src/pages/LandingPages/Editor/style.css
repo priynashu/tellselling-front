@@ -1,0 +1,46 @@
+::-webkit-scrollbar{
+    display:none;
+}
+.sidenav{
+    top:0;
+    left: 0;
+    width: 100%;
+    float: left;
+    height: 108vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    background-color: #e8e1fd;
+    transition: 0.5s;
+    border:1px solid #e8e1fd;
+    padding:5px;
+}
+.main-content{
+    width: 100%;
+    background-color: #d8ccfc;
+}
+.gjs-pn-btn.gjs-pn-active {
+    background-color: #7c75cf;
+    box-shadow: 0 0 3px rgb(0 0 0 / 25%) inset;
+}
+.gjs-pn-panel{
+    position: relative;
+}
+.gjs-cv-canvas{
+    width:100%;
+    height:100%;
+    top:0;
+}
+.gjs-one-bg{
+    background-color: #fff;
+}
+.gjs-two-color{
+    background-color:#9ca8bb;
+}
+.gjs-three-bg{
+    background-color:#e8e1fd;
+    color:#fff;
+}
+.gjs-four-color,.gjs-four-color-h:hover{
+    background-color:#e8e1fd;
+}

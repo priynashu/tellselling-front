@@ -1,0 +1,18 @@
+@import '../../ui/colors';
+
+.home_wrapper {
+  .page_title {
+    font-weight: 400;
+    color: #58575f;
+    font-size: 13px;
+    width: 130px;    
+  }
+
+  .card_wrapper {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 25px;
+    align-items: stretch;
+  }
+}
